@@ -1,0 +1,101 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jordan.UrlShortener.Domain", "Jordan.UrlShortener.Domain\Jordan.UrlShortener.Domain.csproj", "{8C45C5AF-5144-4A44-AEAA-45914259B79E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{82D648EC-A4ED-4D40-AC05-072AA1B57F2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserInterface", "UserInterface", "{8D9ADF00-942B-4914-BE9A-379FCD751441}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{127FD5F1-052F-4432-846C-0CB0F8E788E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{59A02D81-FA08-418D-A396-AFCB08E9A792}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{302818AA-1C81-4A10-8815-E6C0B44E74E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jordan.UrlShortener.UserInterface.Api", "Jordan.UrlShortener.UserInterface.Api\Jordan.UrlShortener.UserInterface.Api.csproj", "{490D78A9-AC5D-41E0-A6F8-18751EF823E9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jordan.UrlShortener.UserInterface.Api.Client", "Jordan.UrlShortener.UserInterface.Api.Client\Jordan.UrlShortener.UserInterface.Api.Client.csproj", "{20A88091-3AE5-47C6-B5E6-BE30B7AF6FD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jordan.UrlShortener.Application", "Jordan.UrlShortener.Application\Jordan.UrlShortener.Application.csproj", "{580BC33B-6450-4AA3-A1BB-8A4CC5C0426F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jordan.UrlShortener.Infrastructure", "Jordan.UrlShortener.Infrastructure\Jordan.UrlShortener.Infrastructure.csproj", "{CD8810BC-2A7E-4097-A162-A5AD3FDD76B3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jordan.UrlShortener.Infrastructure.LocalDb", "Jordan.UrlShortener.Infrastructure.LocalDb\Jordan.UrlShortener.Infrastructure.LocalDb.csproj", "{299A4CAC-83D7-49F1-932E-04A2E4837CFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jordan.UrlShortener.UserInterface.Blazor", "Jordan.UrlShortener.UserInterface.Blazor\Jordan.UrlShortener.UserInterface.Blazor.csproj", "{9BCC463F-7CCC-4187-8B0A-8307FC014302}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jordan.UrlShortener.UserInterface.Api.UnitTests", "Jordan.UrlShortener.UserInterface.Api.UnitTests\Jordan.UrlShortener.UserInterface.Api.UnitTests.csproj", "{D54A32F7-6740-4288-B712-E0B4D3F36934}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jordan.UrlShortener.Application.UnitTests", "Jordan.UrlShortener.Application.UnitTests\Jordan.UrlShortener.Application.UnitTests.csproj", "{C4661507-498B-4729-8E9A-90195FC70250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jordan.UrlShortener.UserInterface.Api.IntegrationTests", "Jordan.UrlShortener.UserInterface.Api.IntegrationTests\Jordan.UrlShortener.UserInterface.Api.IntegrationTests.csproj", "{6D39FB4A-9803-4C95-BAF1-3955436364C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C45C5AF-5144-4A44-AEAA-45914259B79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C45C5AF-5144-4A44-AEAA-45914259B79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C45C5AF-5144-4A44-AEAA-45914259B79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C45C5AF-5144-4A44-AEAA-45914259B79E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{490D78A9-AC5D-41E0-A6F8-18751EF823E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{490D78A9-AC5D-41E0-A6F8-18751EF823E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{490D78A9-AC5D-41E0-A6F8-18751EF823E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{490D78A9-AC5D-41E0-A6F8-18751EF823E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A88091-3AE5-47C6-B5E6-BE30B7AF6FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A88091-3AE5-47C6-B5E6-BE30B7AF6FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A88091-3AE5-47C6-B5E6-BE30B7AF6FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A88091-3AE5-47C6-B5E6-BE30B7AF6FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{580BC33B-6450-4AA3-A1BB-8A4CC5C0426F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{580BC33B-6450-4AA3-A1BB-8A4CC5C0426F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{580BC33B-6450-4AA3-A1BB-8A4CC5C0426F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{580BC33B-6450-4AA3-A1BB-8A4CC5C0426F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD8810BC-2A7E-4097-A162-A5AD3FDD76B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD8810BC-2A7E-4097-A162-A5AD3FDD76B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD8810BC-2A7E-4097-A162-A5AD3FDD76B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD8810BC-2A7E-4097-A162-A5AD3FDD76B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{299A4CAC-83D7-49F1-932E-04A2E4837CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{299A4CAC-83D7-49F1-932E-04A2E4837CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{299A4CAC-83D7-49F1-932E-04A2E4837CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{299A4CAC-83D7-49F1-932E-04A2E4837CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BCC463F-7CCC-4187-8B0A-8307FC014302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BCC463F-7CCC-4187-8B0A-8307FC014302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BCC463F-7CCC-4187-8B0A-8307FC014302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BCC463F-7CCC-4187-8B0A-8307FC014302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D54A32F7-6740-4288-B712-E0B4D3F36934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D54A32F7-6740-4288-B712-E0B4D3F36934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D54A32F7-6740-4288-B712-E0B4D3F36934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D54A32F7-6740-4288-B712-E0B4D3F36934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4661507-498B-4729-8E9A-90195FC70250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4661507-498B-4729-8E9A-90195FC70250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4661507-498B-4729-8E9A-90195FC70250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4661507-498B-4729-8E9A-90195FC70250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D39FB4A-9803-4C95-BAF1-3955436364C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D39FB4A-9803-4C95-BAF1-3955436364C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D39FB4A-9803-4C95-BAF1-3955436364C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D39FB4A-9803-4C95-BAF1-3955436364C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C45C5AF-5144-4A44-AEAA-45914259B79E} = {82D648EC-A4ED-4D40-AC05-072AA1B57F2E}
+		{490D78A9-AC5D-41E0-A6F8-18751EF823E9} = {8D9ADF00-942B-4914-BE9A-379FCD751441}
+		{20A88091-3AE5-47C6-B5E6-BE30B7AF6FD6} = {8D9ADF00-942B-4914-BE9A-379FCD751441}
+		{580BC33B-6450-4AA3-A1BB-8A4CC5C0426F} = {59A02D81-FA08-418D-A396-AFCB08E9A792}
+		{CD8810BC-2A7E-4097-A162-A5AD3FDD76B3} = {127FD5F1-052F-4432-846C-0CB0F8E788E8}
+		{299A4CAC-83D7-49F1-932E-04A2E4837CFE} = {127FD5F1-052F-4432-846C-0CB0F8E788E8}
+		{9BCC463F-7CCC-4187-8B0A-8307FC014302} = {8D9ADF00-942B-4914-BE9A-379FCD751441}
+		{D54A32F7-6740-4288-B712-E0B4D3F36934} = {302818AA-1C81-4A10-8815-E6C0B44E74E7}
+		{C4661507-498B-4729-8E9A-90195FC70250} = {302818AA-1C81-4A10-8815-E6C0B44E74E7}
+		{6D39FB4A-9803-4C95-BAF1-3955436364C4} = {302818AA-1C81-4A10-8815-E6C0B44E74E7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C3C94C2-7C73-4E86-9F00-5265F1A33320}
+	EndGlobalSection
+EndGlobal

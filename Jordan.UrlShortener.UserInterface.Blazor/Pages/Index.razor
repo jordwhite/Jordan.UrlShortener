@@ -1,0 +1,102 @@
+﻿@page "/"
+@using Jordan.UrlShortener.UserInterface.Api.Client.Http
+@using Jordan.UrlShortener.UserInterface.Api.Client.Requests
+@using Jordan.UrlShortener.UserInterface.Api.Client.Responses
+
+<PageTitle>Shorten your URL for Twitter!</PageTitle>
+
+<h1>URL Shortener for Twitter</h1>
+
+<p role="status">@_statusText</p>
+
+<input type="text" size="70" placeholder="Put your URL here!" @bind="_fullUrl" /> 
+<button class="btn btn-primary" @onclick="ShortenUrl">Shorten!</button>
+
+<p hidden="@NoShortenUrl">
+    Your new shortened URL: 
+    <a style="font-weight: bold" href="@_shortenedUrl" target="_blank">@_shortenedUrl</a>
+</p>
+
+@code {
+
+    enum StatusTextState
+    {
+        Normal,
+        InvalidUrl,
+        Error
+    }
+
+    private void SetStatusText(StatusTextState newState)
+    {
+        _statusText = newState switch
+        {
+            StatusTextState.Normal => "Put your URL into the text box and hit 'Shorten!' to begin.",
+            StatusTextState.InvalidUrl => "Your URL could not be sent because it was invalid (it needs to be a well formed absolute Uri with its protocol)!",
+            StatusTextState.Error => "There was an error when sending your URL (you have Blazor up, but is your shorten API up as well?).",
+            _ => throw new ArgumentOutOfRangeException(nameof(newState), newState, null)
+            };
+
+        StateHasChanged();
+    }
+    
+    [Inject]
+    private IConfiguration AppSettings { get; set; }
+    
+    private static ApiClient _apiClient;
+
+    private string _baseUrl;
+    private string _gotoControllerName;
+
+    private string _fullUrl = string.Empty;
+    private string _statusText = "Put your URL into the text box and hit 'Shorten!' to begin.";
+    private string _shortenedUrl;
+
+    private bool NoShortenUrl => string.IsNullOrEmpty(_shortenedUrl);
+
+    private bool IsValidFullUrl() => 
+        Uri.IsWellFormedUriString(_fullUrl, UriKind.Absolute);
+
+    private async Task ShortenUrl()
+    {
+        if (_apiClient == null)
+            InitApiClient();
+
+        if (!IsValidFullUrl())
+        {
+            SetStatusText(StatusTextState.InvalidUrl);
+            return;
+        }
+
+        GenerateShortenedUrlResponse response;
+
+        try
+        {
+            response = await _apiClient.GenerateShortenedUrl(
+                new GenerateShortenedUrlRequest { FullUrl = _fullUrl }
+            );
+        }
+        catch (Exception)
+        {
+            SetStatusText(StatusTextState.Error);
+            throw;
+        }
+
+        if (response == null)
+            return;
+        
+        UpdateShortenedUrl(response.Id);
+        SetStatusText(StatusTextState.Normal);
+        StateHasChanged();
+    }
+
+    private void InitApiClient()
+    {
+        _baseUrl = AppSettings.GetValue<string>("ShortenApiBaseUrl");
+        _gotoControllerName = AppSettings.GetValue<string>("GoToControllerName");
+        _apiClient ??= new ApiClient(_baseUrl);
+    }
+
+    private void UpdateShortenedUrl(string id) => 
+        _shortenedUrl = _baseUrl + $"/{_gotoControllerName}/{id}";
+
+}
