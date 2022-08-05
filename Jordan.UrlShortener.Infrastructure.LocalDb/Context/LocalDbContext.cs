@@ -6,10 +6,10 @@ namespace Jordan.UrlShortener.Infrastructure.LocalDb.Context
 {
     public class LocalDbContext : DbContext, IDbContext
     {
-        public LocalDbContext()
-        { }
-
-        public LocalDbContext(DbContextOptions<LocalDbContext> contextOptions) : base(contextOptions) {}
+        public LocalDbContext(DbContextOptions<LocalDbContext> contextOptions) : base(contextOptions)
+        {
+            Database.EnsureCreated();
+        }
         
         public DbSet<ShortenedUrl> ShortenedUrls { get; set; }
 
