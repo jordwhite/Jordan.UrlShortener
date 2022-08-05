@@ -1,0 +1,85 @@
+User / bussiness requirements:
+- A simple way of using a short URLs is needed - a redirection endpoint
+- Needed is an easy way to add new short URLs - a simple front end that is interactive.
+- We need to be able to use short URLS and create them. essentially.
+- Must be character efficient.
+- Must be reasonably secure (decreasing security concerns e.g. such as preventing attackers iterating though all of the URLS with ease)
+- Tight deadline and needs to be delivered soon
+- Keep it simple but ensure it is robust and maintainable.
+
+
+public class ShortenedUrl {
+	public string Id { get; set; }
+	public string RedirectUrl { get; set; }
+	DateTime CreatedOn { get; set; }
+	string CreatedByIp { get; set; }
+}
+
+Domain:
+	- Commands (?)
+	- Models
+	- Requests
+	- Responses
+
+
+API:
+	GoTo
+		- GoToShortenedUrlRequest (ShortenedUrl Id)
+		- Perform Redirection or error
+
+	Generate:
+		- GenerateShortenedUrlRequest - Url to shorten
+		- GenerateShortenedUrlResponse
+		- Return ShortenedUrl Id
+
+Application:
+
+RandomUrlIdFactory : RandomUrlIdFactory ->
+	Create -> string Url
+
+
+Services
+ShorteningService
+	- Shorten(string redirectUrl): ShortenedUrl;
+
+UrlRetrievalService
+	- Retrieve(string shortenedUrlId): ShortenedUrl;
+
+GenerateShortenedUrlCommandHandler
+GoToShortenedUrlCommandHandler
+
+
+Infrastructure:
+Repository:
+  ShortenedUrlRepository
+	- Add(ShortenedUrl)
+
+Query:
+  GetShortenedUrl(string shortenedUrlId): ShortenedUrl
+
+
+
+----------------------------------------------------------------------------------
+Commands:
+	GenerateShortenedUrlCommand:
+		- url
+		- ip address
+
+	GoToShortenedUrlCommand:
+		- shortenedUrlId
+
+<<Mediator Pattern here>>
+
+Application:
+
+AppSettings : IAppSettings
+{
+	ConnectionString
+
+	LogFile
+
+	MaxUrlsPerDayForSingleIp
+
+	MinRandomUrlIdLength
+	MaxRandomUrlIdLength
+}
